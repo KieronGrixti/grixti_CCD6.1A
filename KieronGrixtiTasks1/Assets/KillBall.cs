@@ -1,13 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
-public class Spawning : MonoBehaviour
+public class KillBall : MonoBehaviour
 {
 
-    public GameObject BallPrefab; //variable declaration
-    public static int numOfBalls = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +15,7 @@ public class Spawning : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) //0 means left-click , 1 means right-click
+        if (Input.GetMouseButtonDown(1)) //1 means right-click
         {
             Vector3 mousePosition = Input.mousePosition; //get mouse location
 
@@ -26,13 +23,15 @@ public class Spawning : MonoBehaviour
             Vector3 inWorldSpace = Camera.main.ScreenToWorldPoint(mousePosition);
             inWorldSpace.z = 0;
 
-            if (numOfBalls < 5)
-            {
+            //check if this ball is close enough to the click
+            float distance = Vector3.Distance(inWorldSpace, this.gameObject.transform.position);
 
-                //spawn a ball using a prefab
-                Instantiate(BallPrefab, inWorldSpace, Quaternion.identity);
-                numOfBalls++;
+            if (distance < 0.5)
+            {
+                Destroy(this.gameObject);
+                Spawning.numOfBalls--;
             }
+
 
         }
     }
