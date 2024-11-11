@@ -421,6 +421,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -502,6 +503,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f221b5fa1f93434bbdd95218e2f3d8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DogText: {fileID: 2066290623}
+  BirdText: {fileID: 991571936}
+  PlayButton: {fileID: 1038783427}
+  SleepButton: {fileID: 1301396574}
+  FeedButton: {fileID: 1194381155}
+  PlayButtonBird: {fileID: 2092579231}
+  SleepButtonBird: {fileID: 1478483624}
+  FeedButtonBird: {fileID: 1493881024}
 --- !u!1 &691240611
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,8 +726,8 @@ Canvas:
   m_GameObject: {fileID: 875310598}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -759,7 +780,7 @@ GameObject:
   - component: {fileID: 991571937}
   - component: {fileID: 991571936}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: BirdText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -782,8 +803,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 155, y: -18}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 219.056, y: -27.797}
+  m_SizeDelta: {x: 328.111, y: 87.649}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &991571936
 MonoBehaviour:
@@ -805,18 +826,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Name: Skye
-
-    Age: 3
-
-    Happiness: 5
-
-    Energy: 5
-
-    Wing Span:
-    0
-
-    Human Years: 24'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1407,7 +1417,7 @@ GameObject:
   - component: {fileID: 1478483625}
   - component: {fileID: 1478483624}
   m_Layer: 5
-  m_Name: SleepButton
+  m_Name: SleepButtonBird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1529,7 +1539,7 @@ GameObject:
   - component: {fileID: 1493881025}
   - component: {fileID: 1493881024}
   m_Layer: 5
-  m_Name: FeedButton
+  m_Name: FeedButtonBird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2004,7 +2014,7 @@ GameObject:
   - component: {fileID: 2066290624}
   - component: {fileID: 2066290623}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: DogText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2027,8 +2037,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -70, y: -20}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -65.374, y: -27.797}
+  m_SizeDelta: {x: 209.253, y: 87.648}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2066290623
 MonoBehaviour:
@@ -2050,18 +2060,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Name: Ginger
-
-    Age: 1
-
-    Happiness: 5
-
-    Energy: 5
-
-    Bark Volume:
-    0
-
-    Human Years: 7'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2151,7 +2150,7 @@ GameObject:
   - component: {fileID: 2092579232}
   - component: {fileID: 2092579231}
   m_Layer: 5
-  m_Name: PlayButton
+  m_Name: PlayButtonBird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
