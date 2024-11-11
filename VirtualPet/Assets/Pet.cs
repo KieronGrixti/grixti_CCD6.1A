@@ -10,6 +10,15 @@ public class Pet
     int happinessLevel;
     int energyLevel;
 
+    public Pet(string name, int age, int happinessLevel, int energyLevel)
+    {
+        this.name = name;
+        this.age = age;
+        this.happinessLevel = happinessLevel;
+        this.energyLevel = energyLevel;
+    }
+
+
     //getter
     public string GetName() { return name; }
     //setter
