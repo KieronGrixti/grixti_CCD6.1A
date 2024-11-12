@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Pet
+public abstract class Pet
 {
     string name;
     int age;
     int happinessLevel;
     int energyLevel;
+
+    public Pet() { } //parameterless construtor
 
     public Pet(string name, int age, int happinessLevel, int energyLevel)
     {
@@ -46,18 +48,12 @@ public class Pet
 
 
 
-
+    public abstract void play();
 
     public void feed()
     {
         energyLevel += 1;
         happinessLevel += 1;
-    }
-
-    public void play()
-    {
-        happinessLevel += 1;
-        energyLevel -= 1;
     }
 
     public void sleep()

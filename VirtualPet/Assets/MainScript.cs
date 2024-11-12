@@ -10,24 +10,23 @@ public class MainScript : MonoBehaviour
     Bird b; //Bird is a data type
     public TextMeshProUGUI DogText;
     public TextMeshProUGUI BirdText;
-    public Button PlayButton, SleepButton, FeedButton, PlayButtonBird, SleepButtonBird, FeedButtonBird;
+    public Button PlayButton, SleepButton, FeedButton, PlayButtonBird, SleepButtonBird, FeedButtonBird,PlayWithAllBtn;
+    List<Pet> pets = new List<Pet>();
 
     // Start is called before the first frame update
     void Start()
     {
-        d = new Dog();
-        d.SetName("Ginger");
-        d.SetAge(1);
-        d.SetHappinessLevel(5);
-        d.SetEnergyLevel(5);
-        d.SetBarkingLevel(5);
+        d = new Dog("Ginger",1,5,5,5);
+        pets.Add(d); //Add new dog to the list
 
-        b = new Bird();
-        b.SetName("Skye");
-        b.SetAge(3);
-        b.SetHappinessLevel(5);
-        b.SetEnergyLevel(5);
-        b.SetWingSpan(15);
+        //d.SetName("Ginger");
+        //d.SetAge(1);
+        //d.SetHappinessLevel(5);
+        //d.SetEnergyLevel(5);
+        //d.SetBarkingLevel(5);
+
+        b = new Bird("Skye",3,5,5,15);
+        pets.Add(b); //add new bird to the list
 
         PlayButton.GetComponent<Button>().onClick.AddListener(PlayEvent);
         PlayButtonBird.GetComponent<Button>().onClick.AddListener(PlayEventBird);
@@ -35,6 +34,8 @@ public class MainScript : MonoBehaviour
         FeedButtonBird.GetComponent<Button>().onClick.AddListener(FeedEventBird);
         SleepButton.GetComponent<Button>().onClick.AddListener(SleepEvent);
         SleepButtonBird.GetComponent<Button>().onClick.AddListener(SleepEventBird);
+
+        PlayWithAllBtn.GetComponent<Button>().onClick.AddListener(playAllEvent);
     }
     void PlayEvent()
     {
@@ -64,6 +65,14 @@ public class MainScript : MonoBehaviour
     void FeedEventBird()
     {
         b.feed();
+    }
+
+    void playAllEvent()
+    {
+        foreach (Pet pet in pets)
+        {
+            pet.play(); //polymorphism
+        }
     }
 
     // Update is called once per frame
