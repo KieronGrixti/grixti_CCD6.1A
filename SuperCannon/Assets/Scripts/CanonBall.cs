@@ -7,9 +7,10 @@ public class CanonBall : Bullet
     // Start is called before the first frame update
     new void Start()
     {
-        SetSpeed(10);
-        GetComponent<Rigidbody2D>().gravityScale = 0.9f;
+        SetSpeed(20);
         base.Start();
+        GetComponent<Rigidbody2D>().gravityScale = 1.3f;
+        
     }
 
     // Update is called once per frame
