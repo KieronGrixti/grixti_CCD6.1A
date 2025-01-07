@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class OutOfBounds : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Bullet"))
+        if (collision.gameObject.CompareTag("Bullet")) 
+            Destroy(collision.gameObject);
+
+        else if (collision.gameObject.CompareTag("Enemy"))
             Destroy(collision.gameObject);
     }
 }
