@@ -20,6 +20,10 @@ public class Bullet : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().velocity = transform.up * speed;
     }
+    public void OnEnable()
+    {
+        GetComponent<Rigidbody2D>().velocity = transform.up * speed;
+    }
 
     // Update is called once per frame
     void Update()

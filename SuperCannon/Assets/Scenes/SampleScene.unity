@@ -134,6 +134,8 @@ GameObject:
   - component: {fileID: 31146877}
   - component: {fileID: 31146876}
   - component: {fileID: 31146878}
+  - component: {fileID: 31146880}
+  - component: {fileID: 31146879}
   m_Layer: 0
   m_Name: Canon
   m_TagString: Untagged
@@ -222,6 +224,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canonBallPrefab: {fileID: 614088470437937037, guid: efd676e3842e04d4194aff93e33f025e, type: 3}
   shortRangeBulletPrefab: {fileID: 6794128142717533943, guid: 836d41a8d96c0da4ab4fbc6ffe1c6634, type: 3}
+  canonPool: {fileID: 31146880}
+  bulletPool: {fileID: 31146879}
+--- !u!114 &31146879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31146875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a431367fab3043f4f8a95f26f7558d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToPool: {fileID: 6794128142717533943, guid: 836d41a8d96c0da4ab4fbc6ffe1c6634, type: 3}
+  amountToPool: 10
+--- !u!114 &31146880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31146875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a431367fab3043f4f8a95f26f7558d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToPool: {fileID: 614088470437937037, guid: efd676e3842e04d4194aff93e33f025e, type: 3}
+  amountToPool: 10
 --- !u!1 &211508597
 GameObject:
   m_ObjectHideFlags: 0

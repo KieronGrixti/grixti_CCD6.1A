@@ -8,6 +8,7 @@ public class Launcher : MonoBehaviour
     public GameObject canonBallPrefab;
     public GameObject shortRangeBulletPrefab;
     Coroutine bulletCoroutine, cannonCoroutine;
+    public ObjectPool canonPool, bulletPool;
 
     // Start is called before the first frame update
     void Start()
@@ -26,11 +27,20 @@ public class Launcher : MonoBehaviour
     }
 
     //Coroutine
-    IEnumerator FireContinuously(GameObject prefab)
+    IEnumerator FireContinuously(ObjectPool pool)
     {
         while (true)
         {
-            Instantiate(prefab, transform.position, transform.rotation);
+            //Instantiate(prefab, transform.position, transform.rotation);
+
+            GameObject bullet = pool.GetPoolObject();
+            if (bullet != null)
+            {
+                bullet.SetActive(true);
+                bullet.transform.position = this.transform.position;
+                bullet.transform.rotation = this.transform.rotation;
+            }
+
             yield return new WaitForSeconds(1);
         }
     }
@@ -45,7 +55,7 @@ public class Launcher : MonoBehaviour
             //Instantiate(canonBallPrefab,transform.position,transform.rotation);
             if (cannonCoroutine == null)
             {
-                cannonCoroutine = StartCoroutine(FireContinuously(canonBallPrefab));
+                cannonCoroutine = StartCoroutine(FireContinuously(canonPool));
             }
         }
 
@@ -60,7 +70,7 @@ public class Launcher : MonoBehaviour
             //Instantiate(shortRangeBulletPrefab, transform.position, transform.rotation);
             if (bulletCoroutine == null)
             {
-                bulletCoroutine = StartCoroutine(FireContinuously(shortRangeBulletPrefab));
+                bulletCoroutine = StartCoroutine(FireContinuously(bulletPool));
             }
         }
 
