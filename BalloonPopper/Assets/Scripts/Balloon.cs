@@ -7,6 +7,8 @@ public class Balloon : MonoBehaviour, IPoppable
     public void onPop()
     {
         Destroy(gameObject);
+        //call Game Manager increment score
+        GameManager.Instance.IncrementScore();
     }
 
     void OnMouseDown()
